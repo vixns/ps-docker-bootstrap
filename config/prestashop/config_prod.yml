@@ -1,0 +1,44 @@
+imports:
+    - { resource: config.yml }
+
+#framework:
+#    validation:
+#        cache: validator.mapping.cache.apc
+#    serializer:
+#        cache: serializer.mapping.cache.apc
+
+#doctrine:
+#    orm:
+#        metadata_cache_driver: apc
+#        result_cache_driver: apc
+#        query_cache_driver: apc
+
+monolog:
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler:      nested
+        nested:
+            type:  stream
+            path:  '%env(PS_LOG_OUTPUT)%'
+            level: debug
+        sentry:
+            type: service
+            id: Sentry\Monolog\Handler
+        console:
+            type:  console
+
+doctrine:
+    orm:
+        metadata_cache_driver: "%cache.driver%"
+        query_cache_driver:    "%cache.driver%"
+
+sentry:
+    dsn: '%env(SENTRY_DSN)%'
+
+services:
+    Sentry\Monolog\Handler:
+        arguments:
+            $hub: '@Sentry\State\HubInterface'
+            $level: !php/const Monolog\Logger::ERROR
