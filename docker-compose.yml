@@ -65,6 +65,7 @@ services:
       - PS_NEW_COOKIE_KEY=${PS_NEW_COOKIE_KEY}
       - ADMIN_FOLDER=${ADMIN_FOLDER}
       - COMPOSER_AUTH=${COMPOSER_AUTH}
+      - COMPOSER_HOME=/tmp
 
   proxy:
     image: haproxy

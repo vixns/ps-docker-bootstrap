@@ -18,6 +18,7 @@ mkdir -p app/app/cache
 cd app
 curl -s -L -O https://download.prestashop.com/download/releases/prestashop_${PS_VERSION}.zip
 curl -s -L -O https://raw.githubusercontent.com/PrestaShop/PrestaShop/${PS_VERSION_BRANCH}/composer.json
+sed -i -e "/^.*clearCache.*$/d" composer.json
 curl -s -L -O https://raw.githubusercontent.com/PrestaShop/PrestaShop/${PS_VERSION_BRANCH}/composer.lock
 unzip -o -q prestashop_${PS_VERSION}.zip
 rm prestashop_${PS_VERSION}.zip

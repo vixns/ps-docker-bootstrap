@@ -6,7 +6,7 @@ USER root
 
 RUN apt-get update && \
   apt-get install --no-install-recommends -y \
-  default-libmysqlclient-dev default-mysql-client nmap less git libzip-dev \
+  default-libmysqlclient-dev default-mysql-client nmap less git libzip-dev unzip \
   locales git libicu-dev libmcrypt-dev && \
   echo  "fr_FR.UTF-8 UTF-8" > /etc/locale.gen && locale-gen && \
   rm -rf /var/lib/apt/lists/* && \
