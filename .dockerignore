@@ -1,6 +1,5 @@
 upload
 img
-docker-compose.yml
 .env
 app/app/cache/*
 app/vendor/phpunit
