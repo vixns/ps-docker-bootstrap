@@ -55,6 +55,12 @@ if (version_compare(_PS_VERSION_, '1.5', '>=') && $domain != $old_domain && !Sho
 Configuration::updateValue('PS_SSL_ENABLED', 1);
 Configuration::updateValue('PS_SSL_ENABLED_EVERYWHERE', 1);
 
+Configuration::updateValue('PS_MAIL_METHOD', 2);
+Configuration::updateValue('PS_MAIL_SERVER', getenv("SMTP_HOST"));
+Configuration::updateValue('PS_MAIL_SMTP_PORT', getenv("SMTP_PORT"));
+Configuration::updateValue('PS_MAIL_USER', getenv("SMTP_USER"));
+Configuration::updateValue('PS_MAIL_PASSWD', getenv("SMTP_PASS"));
+
 //unlink(__FILE__);
 Tools::redirect("index.php");
 die();

@@ -2,11 +2,6 @@
 img/*
 upload/*
 app/app/cache/*
-app/admin13/import/*csv
-app/erp/order/*.csv
-app/erp/order/success/*.csv
-app/themes/Agitateur_Floral/assets/img/21701
-app/themes/Agitateur_Floral/assets/cache/*
 app/app/logs/*
 app/img/c/*
 app/img/p/*
@@ -14,7 +9,6 @@ app/img/tmp/*
 app/img/cms/*
 app/img/affi/*
 app/config/xml/*
-app/logs/jscomposer.log
 app/*.xml
-/modules/prestablog/sitemap/1/*.xml
 .ds_store
+.develop

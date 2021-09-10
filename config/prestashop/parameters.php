@@ -1,15 +1,14 @@
 <?php return array (
   'parameters' =>
   array (
-    'database_host' => getenv('MYSQL_HOST'),
-    'database_port' => getenv('MYSQL_PORT'),
-    'database_name' => getenv('MYSQL_DATABASE'),
-    'database_user' => getenv('MYSQL_USER'),
-    'database_password' => getenv('MYSQL_PASSWORD'),
+    'database_host' => getenv('DB_HOST'),
+    'database_port' => 3306,
+    'database_name' => getenv('DB_NAME'),
+    'database_user' => getenv('DB_USER'),
+    'database_password' => getenv('DB_PASSWORD'),
     'database_prefix' => 'ps_',
     'database_engine' => 'InnoDB',
     'sentry_dsn' => getenv('SENTRY_DSN'),
-    'sentry_name' => getenv('SENTRY_NAME'),
     'sentry_release' => getenv('VERSION'),
     'mailer_transport' => 'smtp',
     'mailer_host' => getenv('SMTP_HOST'),

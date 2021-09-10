@@ -1,5 +1,5 @@
 FROM vixns/php-nginx:7.4-debian-nonroot
-ARG PHP_UID
+ARG UID
 ENV MYSQL_HOST=localhost MYSQL_PORT=3306 SMTP_HOST=mailhog VERSION=dev
 
 USER root
@@ -11,7 +11,7 @@ RUN apt-get update && \
   echo  "fr_FR.UTF-8 UTF-8" > /etc/locale.gen && locale-gen && \
   rm -rf /var/lib/apt/lists/* && \
   curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-  usermod -u ${PHP_UID:-33} www-data && \
+  usermod -u ${UID:-33} www-data && \
   chown -R www-data:www-data /var/log/nginx /var/lib/nginx /etc/service /run && \
   docker-php-ext-install pdo_mysql zip mysqli intl && \
   pecl install mcrypt && \
