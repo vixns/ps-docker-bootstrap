@@ -570,7 +570,7 @@ deploy:
             - "${PROD_FQDN}"
 EOF
 
-docker-compose up -d --force-recreate app
+docker-compose up -d --build app
 
 echo "Install sentry package"
 docker-compose exec -e COMPOSER_HOME=/tmp -e COMPOSER_AUTH="{\"github-oauth\": {\"github.com\": \"${GITHUB_TOKEN}\"}}" app composer require "symfony/polyfill-php80:<=1.18" "sentry/sentry-symfony"
